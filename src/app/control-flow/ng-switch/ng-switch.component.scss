@@ -1,0 +1,40 @@
+div.controls {
+  margin-top: 1rem;
+}
+
+div.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: stretch;
+  gap: 0.5rem;
+
+  div.item {
+    border-radius: 0.5rem;
+
+    &.backward {
+      grid-column: 1;
+      background-color: color-mix(in srgb, var(--hot-red) 15%, transparent);
+    }
+    &.neutral {
+      grid-column: 2;
+      background-color: color-mix(in srgb, var(--bright-blue) 15%, transparent);
+    }
+    &.forward {
+      grid-column: 3;
+      background-color: color-mix(
+        in srgb,
+        var(--electric-violet) 15%,
+        transparent
+      );
+    }
+    &.parking {
+      grid-column: span 3;
+      background-color: color-mix(in srgb, var(--gray-700) 15%, transparent);
+    }
+
+    p {
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+}

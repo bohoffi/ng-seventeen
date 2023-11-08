@@ -1,0 +1,46 @@
+<div class="controls">
+  <p>Mode: {{ mode() }}</p>
+  <button type="button" (click)="setBackward()">BACKWARD</button>
+  <button type="button" (click)="setNeutral()">NEUTRAL</button>
+  <button type="button" (click)="setForward()">FORWARD</button>
+  <button type="button" (click)="setParking()">PARKING</button>
+</div>
+
+<h2>*ngSwitch</h2>
+
+<div class="container" [ngSwitch]="mode()">
+  <div class="item backward" *ngSwitchCase="'BACKWARD'">
+    <p>Backward</p>
+  </div>
+  <div class="item neutral" *ngSwitchCase="'NEUTRAL'">
+    <p>Neutral</p>
+  </div>
+  <div class="item forward" *ngSwitchCase="'FORWARD'">
+    <p>Forward</p>
+  </div>
+  <div class="item parking" *ngSwitchDefault>
+    <p>Parking</p>
+  </div>
+</div>
+
+<h2>&#64;switch (former '*ngSwitch')</h2>
+
+<div class="container">
+  @switch (mode()) { @case ('BACKWARD') {
+  <div class="item backward">
+    <p>Backward</p>
+  </div>
+  } @case ('NEUTRAL') {
+  <div class="item neutral">
+    <p>Neutral</p>
+  </div>
+  } @case ('FORWARD') {
+  <div class="item forward">
+    <p>Forward</p>
+  </div>
+  } @default {
+  <div class="item parking">
+    <p>Parking</p>
+  </div>
+  } }
+</div>

@@ -1,0 +1,42 @@
+<h2>
+  &#64;defer (former constructs like suspense in conjunction with '*ngIf')
+</h2>
+
+<div>
+  <input
+    #checkboxDefer
+    type="checkbox"
+    [checked]="loadDeferedContent()"
+    (change)="loadDeferedContent.set(checkboxDefer.checked)"
+    id="checkboxDefer"
+  />
+  <label for="checkboxDefer"
+    >DevTools network tab shows loading <strong>app-dummy</strong> component
+    when checked</label
+  >
+</div>
+
+<p>
+  (For displaying the error block switch throttling to `offline` in DevTools)
+</p>
+
+<div class="defered-container">
+  @defer (when loadDeferedContent()) {
+  <div class="defered">
+    <p>Defered</p>
+  </div>
+  <app-dummy />
+  } @loading (minimum 3s) {
+  <div class="loading">
+    <p>Loading --> fetching defered chunk</p>
+  </div>
+  } @placeholder {
+  <div class="placeholder">
+    <p>Placeholder --> loading has not started yet</p>
+  </div>
+  } @error {
+  <div class="error">
+    <p>Error while loading defered content</p>
+  </div>
+  }
+</div>

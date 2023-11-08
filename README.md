@@ -1,27 +1,34 @@
 # NgSeventeen
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.0-rc.5.
+## esbuild
 
-## Development server
+- before: `@angular-devkit/build-angular:browser`
+  - including `"main": "src/main.ts"` option
+- now: `@angular-devkit/build-angular:application`
+  - including `"browser": "src/main.ts"` option
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Builder comparison
 
-## Code scaffolding
+- fresh Angular workspace created using `ng new`using `@angular/cli@17.0.0-rc.5`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+| Builder                                     | Buildtime                                       |
+| ------------------------------------------- | ----------------------------------------------- |
+| `@angular-devkit/build-angular:browser`     | 1. `18.670ms`<br>2. `18.284ms`<br>3. `18.120ms` |
+| `@angular-devkit/build-angular:application` | 1. `10.879ms`<br>2. `11.057ms`<br>3. `11.143ms` |
 
-## Build
+## Template Control Flow
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### @for
 
-## Running unit tests
+- `track` (former `trackBy`)
+  - is now **required**
+  - > when in doubt, using `track $index` is a good default
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### @if
 
-## Running end-to-end tests
+- `if`/`else` can now be written in one block without any `<ng-container />` nesting
+- adds `else if`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### View Transition API
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- get smooth animations when changing routes

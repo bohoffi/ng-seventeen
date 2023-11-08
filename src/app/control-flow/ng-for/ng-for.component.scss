@@ -1,0 +1,20 @@
+div.periodic-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: stretch;
+  gap: 0.5rem;
+
+  div.periodic-element {
+    border-radius: 0.5rem;
+    background-color: color-mix(in srgb, var(--bright-blue) 15%, transparent);
+
+    .periodic-element-name {
+      font-weight: bold;
+      text-align: center;
+    }
+    &.empty {
+      background-color: color-mix(in srgb, var(--hot-red) 15%, transparent);
+      grid-column: span 2;
+    }
+  }
+}

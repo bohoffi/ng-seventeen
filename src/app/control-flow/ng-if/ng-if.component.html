@@ -1,0 +1,45 @@
+<div class="controls">
+  Value: {{ value() }}
+  <button type="button" (click)="increment()">Increment</button>
+  <button type="button" (click)="decrement()">Decrement</button>
+</div>
+
+<h2>*ngIf</h2>
+
+<div class="container">
+  <ng-container *ngIf="value() < 0; else nullish">
+    <div class="item negative">
+      <p>Negative</p>
+    </div>
+  </ng-container>
+</div>
+<ng-template #nullish>
+  <ng-container *ngIf="value() === 0; else positive">
+    <div class="item null">
+      <p>0</p>
+    </div>
+  </ng-container>
+</ng-template>
+<ng-template #positive>
+  <div class="item positive">
+    <p>Positive</p>
+  </div>
+</ng-template>
+
+<h2>&#64;if (former '*ngIf')</h2>
+
+<div class="container">
+  @if (value() < 0) {
+  <div class="item negative">
+    <p>Negative</p>
+  </div>
+  } @else if (value() === 0) {
+  <div class="item null">
+    <p>0</p>
+  </div>
+  } @else {
+  <div class="item positive">
+    <p>Positive</p>
+  </div>
+  }
+</div>
