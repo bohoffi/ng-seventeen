@@ -1,5 +1,5 @@
 import { NgForOf, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 
 interface PeriodicElement {
@@ -27,6 +27,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   imports: [NgForOf, NgIf, MatCardModule],
   templateUrl: './ng-for.component.html',
   styleUrl: './ng-for.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NgForComponent {
   protected array: PeriodicElement[] = ELEMENT_DATA;

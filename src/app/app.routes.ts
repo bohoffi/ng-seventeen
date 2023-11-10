@@ -2,6 +2,21 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
+    path: 'signals',
+    loadComponent: () =>
+      import('./signals/signals.component').then((c) => c.SignalsComponent),
+  },
+  {
+    path: 'route-binding/:id',
+    data: {
+      configData: 'I am fixed',
+    },
+    loadComponent: () =>
+      import('./route-data-binding/route-data-binding.component').then(
+        (c) => c.RouteDataBindingComponent
+      ),
+  },
+  {
     path: 'control-flow',
     children: [
       {

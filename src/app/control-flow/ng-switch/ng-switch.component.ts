@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -17,6 +17,7 @@ type Mode = 'FORWARD' | 'NEUTRAL' | 'BACKWARD' | 'PARKING';
   ],
   templateUrl: './ng-switch.component.html',
   styleUrl: './ng-switch.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NgSwitchComponent {
   protected mode = signal<Mode>('NEUTRAL');

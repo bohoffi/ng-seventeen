@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -9,6 +9,7 @@ import { MatCardModule } from '@angular/material/card';
   imports: [NgIf, MatButtonModule, MatCardModule],
   templateUrl: './ng-if.component.html',
   styleUrl: './ng-if.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NgIfComponent {
   protected value = signal(0);

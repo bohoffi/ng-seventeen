@@ -1,0 +1,41 @@
+<div class="controls">
+  <button mat-raised-button color="primary" type="button" (click)="increment()">
+    Increment
+  </button>
+  <button mat-raised-button color="primary" type="button" (click)="decrement()">
+    Decrement
+  </button>
+  <button mat-raised-button color="primary" type="button" (click)="reset()">
+    Reset
+  </button>
+</div>
+
+<div class="comparison">
+  <div>
+    <h2>Observables</h2>
+
+    <p>counter$: {{ counter$ | async }}</p>
+
+    <p>pipedDoubled$: {{ pipedDoubled$ | async }}</p>
+
+    <ul>
+      @for (log of obsLogs; track $index) {
+      <li>{{ log }}</li>
+      }
+    </ul>
+  </div>
+
+  <div>
+    <h2>Signals</h2>
+
+    <p>$counter: {{ $counter() }}</p>
+
+    <p>$computedDoubled: {{ $computedDoubled() }}</p>
+
+    <ul>
+      @for (log of logs; track $index) {
+      <li>{{ log }}</li>
+      }
+    </ul>
+  </div>
+</div>
