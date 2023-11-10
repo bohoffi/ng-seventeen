@@ -1,45 +1,49 @@
 <div class="controls">
   Value: {{ value() }}
-  <button type="button" (click)="increment()">Increment</button>
-  <button type="button" (click)="decrement()">Decrement</button>
+  <button mat-raised-button color="primary" type="button" (click)="increment()">
+    Increment
+  </button>
+  <button mat-raised-button color="primary" type="button" (click)="decrement()">
+    Decrement
+  </button>
 </div>
 
 <h2>*ngIf</h2>
 
-<div class="container">
+<div class="if-container">
   <ng-container *ngIf="value() < 0; else nullish">
-    <div class="item negative">
-      <p>Negative</p>
-    </div>
+    <mat-card class="item negative">
+      <mat-card-content> Negative </mat-card-content>
+    </mat-card>
   </ng-container>
 </div>
 <ng-template #nullish>
   <ng-container *ngIf="value() === 0; else positive">
-    <div class="item null">
-      <p>0</p>
-    </div>
+    <mat-card class="item null">
+      <mat-card-content> 0 </mat-card-content>
+    </mat-card>
   </ng-container>
 </ng-template>
 <ng-template #positive>
-  <div class="item positive">
-    <p>Positive</p>
-  </div>
+  <mat-card class="item positive">
+    <mat-card-content> Positive </mat-card-content>
+  </mat-card>
 </ng-template>
 
 <h2>&#64;if (former '*ngIf')</h2>
 
-<div class="container">
+<div class="if-container">
   @if (value() < 0) {
-  <div class="item negative">
-    <p>Negative</p>
-  </div>
+  <mat-card class="item negative">
+    <mat-card-content> Negative </mat-card-content>
+  </mat-card>
   } @else if (value() === 0) {
-  <div class="item null">
-    <p>0</p>
-  </div>
+  <mat-card class="item null">
+    <mat-card-content> 0 </mat-card-content>
+  </mat-card>
   } @else {
-  <div class="item positive">
-    <p>Positive</p>
-  </div>
+  <mat-card class="item positive">
+    <mat-card-content> Positive </mat-card-content>
+  </mat-card>
   }
 </div>

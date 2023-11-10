@@ -1,5 +1,6 @@
 import { NgForOf, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
 
 interface PeriodicElement {
   name: string;
@@ -23,7 +24,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 @Component({
   selector: 'app-ng-for',
   standalone: true,
-  imports: [NgForOf, NgIf],
+  imports: [NgForOf, NgIf, MatCardModule],
   templateUrl: './ng-for.component.html',
   styleUrl: './ng-for.component.scss',
 })

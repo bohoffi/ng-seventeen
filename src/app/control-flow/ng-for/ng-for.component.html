@@ -2,17 +2,22 @@
 
 <div class="periodic-container">
   <ng-container *ngIf="array.length; else empty">
-    <div class="periodic-element" *ngFor="let element of array; index as idx">
-      <p class="periodic-element-name">
+    <mat-card
+      class="periodic-element"
+      *ngFor="let element of array; index as idx"
+    >
+      <mat-card-content class="periodic-element-name">
         #{{ element.position }} {{ element.name }} (Index: {{ idx }})
-      </p>
-    </div>
+      </mat-card-content>
+    </mat-card>
   </ng-container>
 
   <ng-template #empty>
-    <div class="periodic-element empty">
-      <p class="periodic-element-name">No elements</p>
-    </div>
+    <mat-card class="periodic-element empty">
+      <mat-card-content class="periodic-element-name"
+        >No elements</mat-card-content
+      >
+    </mat-card>
   </ng-template>
 </div>
 
@@ -20,14 +25,16 @@
 
 <div class="periodic-container">
   @for (element of array; track element.position; let idx = $index;) {
-  <div class="periodic-element">
-    <p class="periodic-element-name">
+  <mat-card class="periodic-element">
+    <mat-card-content class="periodic-element-name">
       #{{ element.position }} {{ element.name }} (Index: {{ idx }})
-    </p>
-  </div>
+    </mat-card-content>
+  </mat-card>
   } @empty {
-  <div class="periodic-element empty">
-    <p class="periodic-element-name">No elements</p>
-  </div>
+  <mat-card class="periodic-element empty">
+    <mat-card-content class="periodic-element-name"
+      >No elements</mat-card-content
+    >
+  </mat-card>
   }
 </div>

@@ -4,7 +4,7 @@ div.periodic-container {
   justify-items: stretch;
   gap: 0.5rem;
 
-  div.periodic-element {
+  .periodic-element {
     border-radius: 0.5rem;
     background-color: color-mix(in srgb, var(--bright-blue) 15%, transparent);
 

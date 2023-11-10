@@ -1,27 +1,23 @@
 div.defered-container {
-  div.content {
-    border-radius: 0.5rem;
-
-    p {
-      font-weight: bold;
-      text-align: center;
-    }
-  }
-
-  div.defered {
+  .defered {
     background-color: color-mix(in srgb, var(--bright-blue) 15%, transparent);
   }
-  div.loading {
+  .loading {
     background-color: color-mix(
       in srgb,
       var(--electric-violet) 15%,
       transparent
     );
   }
-  div.placeholder {
+  .placeholder {
     background-color: color-mix(in srgb, var(--gray-700) 15%, transparent);
   }
-  div.error {
+  .error {
     background-color: color-mix(in srgb, var(--hot-red) 50%, transparent);
+  }
+
+  mat-card-content {
+    font-weight: bold;
+    text-align: center;
   }
 }

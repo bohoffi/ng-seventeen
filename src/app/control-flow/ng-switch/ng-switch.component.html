@@ -1,46 +1,74 @@
 <div class="controls">
   <p>Mode: {{ mode() }}</p>
-  <button type="button" (click)="setBackward()">BACKWARD</button>
-  <button type="button" (click)="setNeutral()">NEUTRAL</button>
-  <button type="button" (click)="setForward()">FORWARD</button>
-  <button type="button" (click)="setParking()">PARKING</button>
+  <button
+    mat-raised-button
+    color="primary"
+    type="button"
+    (click)="setBackward()"
+  >
+    BACKWARD
+  </button>
+  <button
+    mat-raised-button
+    color="primary"
+    type="button"
+    (click)="setNeutral()"
+  >
+    NEUTRAL
+  </button>
+  <button
+    mat-raised-button
+    color="primary"
+    type="button"
+    (click)="setForward()"
+  >
+    FORWARD
+  </button>
+  <button
+    mat-raised-button
+    color="primary"
+    type="button"
+    (click)="setParking()"
+  >
+    PARKING
+  </button>
 </div>
 
 <h2>*ngSwitch</h2>
 
-<div class="container" [ngSwitch]="mode()">
-  <div class="item backward" *ngSwitchCase="'BACKWARD'">
-    <p>Backward</p>
-  </div>
-  <div class="item neutral" *ngSwitchCase="'NEUTRAL'">
-    <p>Neutral</p>
-  </div>
-  <div class="item forward" *ngSwitchCase="'FORWARD'">
-    <p>Forward</p>
-  </div>
-  <div class="item parking" *ngSwitchDefault>
-    <p>Parking</p>
-  </div>
+<div class="switch-container" [ngSwitch]="mode()">
+  <mat-card class="item backward" *ngSwitchCase="'BACKWARD'">
+    <mat-card-content>Backward</mat-card-content>
+  </mat-card>
+  <mat-card class="item neutral" *ngSwitchCase="'NEUTRAL'">
+    <mat-card-content>Neutral</mat-card-content>
+  </mat-card>
+  <mat-card class="item forward" *ngSwitchCase="'FORWARD'">
+    <mat-card-content>Forward</mat-card-content>
+  </mat-card>
+  <mat-card class="item parking" *ngSwitchDefault>
+    <mat-card-content>Parking</mat-card-content>
+  </mat-card>
 </div>
 
 <h2>&#64;switch (former '*ngSwitch')</h2>
 
-<div class="container">
+<div class="switch-container">
   @switch (mode()) { @case ('BACKWARD') {
-  <div class="item backward">
-    <p>Backward</p>
-  </div>
+  <mat-card class="item backward">
+    <mat-card-content>Backward</mat-card-content>
+  </mat-card>
   } @case ('NEUTRAL') {
-  <div class="item neutral">
-    <p>Neutral</p>
-  </div>
+  <mat-card class="item neutral">
+    <mat-card-content>Neutral</mat-card-content>
+  </mat-card>
   } @case ('FORWARD') {
-  <div class="item forward">
-    <p>Forward</p>
-  </div>
+  <mat-card class="item forward">
+    <mat-card-content>Forward</mat-card-content>
+  </mat-card>
   } @default {
-  <div class="item parking">
-    <p>Parking</p>
-  </div>
+  <mat-card class="item parking">
+    <mat-card-content>Parking</mat-card-content>
+  </mat-card>
   } }
 </div>

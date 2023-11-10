@@ -1,16 +1,10 @@
-div.controls {
-  margin-top: 1rem;
-}
-
-div.container {
+div.if-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: stretch;
   gap: 0.5rem;
 
-  div.item {
-    border-radius: 0.5rem;
-
+  .item {
     &.negative {
       grid-column: 1;
       background-color: color-mix(in srgb, var(--hot-red) 15%, transparent);
@@ -28,7 +22,7 @@ div.container {
       );
     }
 
-    p {
+    mat-card-content {
       font-weight: bold;
       text-align: center;
     }

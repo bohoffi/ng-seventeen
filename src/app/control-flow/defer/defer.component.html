@@ -22,21 +22,23 @@
 
 <div class="defered-container">
   @defer (when loadDeferedContent()) {
-  <div class="defered">
-    <p>Defered</p>
-  </div>
+  <mat-card class="defered">
+    <mat-card-content>Defered</mat-card-content>
+  </mat-card>
   <app-dummy />
   } @loading (minimum 3s) {
-  <div class="loading">
-    <p>Loading --> fetching defered chunk</p>
-  </div>
+  <mat-card class="loading">
+    <mat-card-content>Loading --> fetching defered chunk</mat-card-content>
+  </mat-card>
   } @placeholder {
-  <div class="placeholder">
-    <p>Placeholder --> loading has not started yet</p>
-  </div>
+  <mat-card class="placeholder">
+    <mat-card-content
+      >Placeholder --> loading has not started yet</mat-card-content
+    >
+  </mat-card>
   } @error {
-  <div class="error">
-    <p>Error while loading defered content</p>
-  </div>
+  <mat-card class="error">
+    <mat-card-content>Error while loading defered content</mat-card-content>
+  </mat-card>
   }
 </div>

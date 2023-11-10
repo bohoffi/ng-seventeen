@@ -1,10 +1,12 @@
-import { Component, EventEmitter, Input, Output, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { NgIf } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-ng-if',
   standalone: true,
-  imports: [NgIf],
+  imports: [NgIf, MatButtonModule, MatCardModule],
   templateUrl: './ng-if.component.html',
   styleUrl: './ng-if.component.scss',
 })
