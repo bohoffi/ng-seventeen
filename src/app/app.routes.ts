@@ -7,6 +7,13 @@ export const routes: Routes = [
       import('./signals/signals.component').then((c) => c.SignalsComponent),
   },
   {
+    path: 'required-inputs',
+    loadComponent: () =>
+      import('./required-inputs/required-inputs.component').then(
+        (c) => c.RequiredInputsComponent
+      ),
+  },
+  {
     path: 'route-binding/:id',
     data: {
       configData: 'I am fixed',
